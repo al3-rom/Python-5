@@ -6,6 +6,9 @@ print(Tupla1[0])
 print(Tupla1[1])
 print(Tupla1[2])
 print(type(Tupla1))
+# o de otra forma: 
+for elemento in Tupla1:
+        print(elemento)
 
 print("----2----")
 
@@ -14,7 +17,6 @@ print("----2----")
 
 # Creamos una lista 
 Lista = [3,2,1]
-print(Lista)
 Lista[0] = 1
 print(Lista)
 print(type(Lista))
@@ -24,7 +26,7 @@ print(type(Lista))
 Tupla2 = (3,2,1)
 print(Tupla2)
 # Tupla2[0] = 1
-# print(Tupla2) No se puede, las tuplas no se modifican
+# print(Tupla2) No se puede, las tuplas no se modifican - esa es la diferencia
 print(type(Tupla2))
 
 print("----3----")
@@ -60,14 +62,14 @@ print(type(letra))
 print("----5----")
 
 # Creamos una tupla de números
-Tupla5 = (8,4,3,3,5,6,2)
+Tupla5 = (1,2,3,4,5,6,7,8,9)
 # Creamos una lista para guardar todos los números pares
-pares = []
+producto = 1
 # Hacemos el bucle
-for i in range(len(Tupla5)):
-        if Tupla5[i] % 2 == 0:
-                pares.append(Tupla5[i])
+for num in Tupla5:
+        if num % 2 == 0:
+                producto = producto * num
 # Imprimimos por pantalla
-print(pares)
+print(producto)
 
 # Siguiente parte en Ejercicio2!!!

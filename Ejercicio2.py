@@ -21,8 +21,9 @@ print("----7----")
 tupla = (2,2,5,3,4,4,5,3,3,1,1,1,1,3,7,7,7)
 print(tupla)
 
-# Eliminamos dupluicados
+# Eliminamos duplicados
 tupla_dup = set(tupla)
+tupla_dup = tuple(tupla_dup)
 print(tupla_dup)
 
 # Crea un script que dada una tupla y un numero entero, devuelve verdadero si el
@@ -42,6 +43,10 @@ for num in range(len(tupla)):
         print("Falso")
         break
     
+# O mas facil es:
+
+comprobacion = numero in tupla
+print(comprobacion)
         
 
 # Crea un script que dadas dos tuplas cree una tupla resultante de la union de ambas
@@ -54,7 +59,7 @@ tupla2 = (5,3,3)
 print(tupla1)
 print(tupla2)
 # creamos tupla resultante
-tupla_res = sum(tupla1 + tupla2)
+tupla_res = (tupla1 + tupla2)
 print(tupla_res)
 
 print("----10----")
@@ -63,15 +68,12 @@ print("----10----")
 # creamos tupla
 
 tupla = (7,3,2,1,65,33,12,31)
-num_max = 0
-num_min = 0
-# creamos el script
+num_max = max(tupla)
+num_min = min(tupla)
+print("El maximo:", num_min)
+print("El minimo:",num_max)
 
-for num in tupla:
-    num_max = max(tupla)
-    num_min = min(tupla)
-print("Numero maximo es:",num_max)
-print("Numero minimo es:",num_min)
+
 
 print("----11----")
 # Crea un script que dada una tupla con strings devuelva el string más largo y el más
@@ -79,9 +81,6 @@ print("----11----")
 
 # creamos tupla con strings 
 tupla = ("Hola", "Bienvenida!", "Amargo")
-string_largo = ''
-string_corto = ''
-
 # creamos script
 string_largo = max(tupla, key=len)
 string_corto = min(tupla, key=len)
@@ -137,5 +136,9 @@ print(type(nueva_tupla))
 print(nueva_tupla1)
 print(type(nueva_tupla1))
 
+# o mas facil
+
+mis_tuplas = tuple(sum(tuplas) for tuplas in tupla_principal)
+print(mis_tuplas)
 
 # Siguiente en ejercicio3!!!

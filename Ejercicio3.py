@@ -7,7 +7,8 @@ set1 = {2,3,4}
 print(set1)
 
 # Eleminamos uno de sus elementos
-set1.discard(2)
+set1.discard(2) # o remove
+set1.remove(3)
 print(set1)
 
 # Crea un set vacío.
@@ -78,7 +79,7 @@ set2 = {2,3,5,7,8,7,7,1}
 print(set1)
 print(set2)
 # Creamos script
-set_nuevo = set1.union(set2)
+set_nuevo = set1.symmetric_difference(set2)
 print("....")
 print(set_nuevo)
 
@@ -107,7 +108,7 @@ set2 = {3,5,1,6,2}
 print(set1, set2)
 print("....")
 
-nuevo_set = set1
+nuevo_set = set1.difference(set2)
 print(nuevo_set)
 print(type(nuevo_set))
 
@@ -117,4 +118,8 @@ print("----22----")
 # dentro del set.
 
 
-
+mi_set = {1,2,3,4,5,6,7,8}
+producto = 1
+for numeros in mi_set:
+    producto = producto * numeros
+print(producto)
