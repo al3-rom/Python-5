@@ -12,16 +12,39 @@ Pista 1: Tus datos de entrada podrían ser así —> red_social = [("Juan", ["Ma
 Pista 2: Para eliminar duplicidades puedes usar sets 
 
 """
-base_de_datos = (("Alex", ["Alvaro","Mario","Alejandro", "Alvaro", "Laura"]),
+
+# Datos de entrada
+red_social = (("Alex", ["Alvaro","Mario","Alejandro", "Alvaro", "Laura", "Roger"]),
                  ("Alejandro", ["Alex", "Mario", "Alvaro", "Ruge", "Alvaro"]), 
                  ("Alvaro", ["Alex", "Laura", "Sashka", "Alex"]))
 
-tupla_nueva = []
+# Eliminar las cuentas duplicadas en amigos
+red_social_sin_duplicados = []
+for i in range(len(red_social)):
+    # usuario = red_social[i][0]
+    # amigos = red_social[i][1]
+    usuario, amigos = red_social[i]
+    amigos_sin_duplicados = list(set(amigos))
+    red_social_sin_duplicados.append((usuario,amigos_sin_duplicados))
 
-for tupla in base_de_datos:
-    tupla_nueva.append(tupla[0])
-    tupla_nueva.append(set(tupla[1]))
+# Contar el numero de amigos de cada usuario
+amigos_por_usuario = []
+for usuario,amigos in red_social_sin_duplicados:
+    amigos_por_usuario.append((usuario,len(amigos)))
 
-print(tupla_nueva)
+amigos_por_usuario = tuple(amigos_por_usuario)
+print(amigos_por_usuario)
 
-# No se que hacer
+# Obtener el usuario con mas amigos
+lista_usuarios = [tupla[0] for tupla in amigos_por_usuario]
+numero_amigos = [amigos[1] for amigos in amigos_por_usuario]
+
+print(lista_usuarios)
+print(numero_amigos)
+
+indice_con_mas_amigos = numero_amigos.index(max(numero_amigos))
+
+usuario_con_mas_amigos = lista_usuarios[indice_con_mas_amigos]
+print(usuario_con_mas_amigos)
+# Output: tuplas de tuplas -- usuario, numero de amigos
+# Output: usuario con mas amigos

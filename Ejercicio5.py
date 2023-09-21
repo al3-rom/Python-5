@@ -15,15 +15,24 @@ lista_libros = [
     ("IsAAc", "Alvaro Stricly Hiphop"),
     ("Boxeo", "Mario Polaco Español")
 ]
-lista_libros = tuple(lista_libros)
-print(type(lista_libros))
+# lista_libros = tuple(lista_libros)
+# print(type(lista_libros))
 
-nueva_tupla = []
+# nueva_tupla = []
 
+# for tupla in lista_libros:
+  #  nueva_tupla.append(tupla[0])
+   # nueva_tupla.append(tupla[1])
+#print(nueva_tupla)
+
+#nuevo = nueva_tupla[1][1]
+#print(nuevo)
+
+titulos_y_apellidos = []
 for tupla in lista_libros:
-    nueva_tupla.append(tupla[0])
-    nueva_tupla.append(tupla[1])
-print(nueva_tupla)
+    titulo, autor = tupla
+    apellido = autor.split()[-1]
+    print(apellido)
 
-# No lo se como sacar solo apellidos
-
+    titulos_y_apellidos.append((titulo,apellido))
+print(titulos_y_apellidos)
